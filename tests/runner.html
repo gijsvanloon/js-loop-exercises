@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha Tests</title>
+
+    <link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="test"></div>
+
+    <!-- load deps -->
+    <script src="/node_modules/chai/chai.js"></script>
+    <script src="/node_modules/mocha/mocha.js"></script>
+    <script src="/node_modules/sinon/pkg/sinon.js"></script>
+
+    <!-- run tests -->
+    <script>
+      window.expect = chai.expect;
+      mocha.setup("bdd");
+      window.onload = () => {
+        mocha.run();
+      };
+    </script>
+
+    <!-- load tests and answers -->
+    <script src="/tests/app/loops.js"></script>
+    <script src="/app/loops.js"></script>
+  </body>
+</html>
